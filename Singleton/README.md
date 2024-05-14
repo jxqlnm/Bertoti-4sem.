@@ -4,7 +4,8 @@
 
 ## Exemplo
 
-![Strategy Diagram](/Engenharia%20III/Singleton/src/assets/diagrama_singleton.png)
+![image](https://github.com/jxqlnm/Eng3/assets/128145943/e68092e0-3946-4b14-9a68-f504e306b457)
+
 
 ### Código
 
