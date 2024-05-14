@@ -4,7 +4,8 @@
 
 ## Exemplo
 
-![Composite Diagram](/Engenharia%20III/Composite/src/assets/diagrama_composite.png)
+![image](https://github.com/jxqlnm/Eng3/assets/128145943/31816774-ad89-4b99-8082-bc6ba222622a)
+
 
 ### Código
 
