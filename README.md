@@ -1,6 +1,146 @@
 
 # Padrões de Design Patterns
 
+# Composite pattern
+- Padrão Composite no contexto de formas geométricas.
+
+  ![image](https://github.com/jxqlnm/Eng3/assets/128145943/3f5983fa-e52c-49b9-9099-e8ddc618dd38)
+
+>Interface Shape: Esta interface define a estrutura básica para todas as formas na hierarquia. Ela contém um método draw(String color) que desenha a forma na cor especificada.
+
+>Classe Circle: Esta classe implementa a interface Shape e desenha um círculo na cor especificada.
+
+>Classe Square: Esta classe implementa a interface Shape e desenha um quadrado na cor especificada.
+
+>Classe Group: Esta classe implementa a interface Shape e gerencia uma lista de objetos Shape. Ela fornece métodos para adicionar e remover formas da lista, além de um método draw(String color) que desenha todas as formas na lista na cor especificada
+- Aplicação do Padrão Composite:
+Na imagem, a classe Group é usada para compor os objetos Circle e Square. Isso cria uma estrutura de árvore, onde o objeto Group atua como o nó raiz e os objetos Circle e Square atuam como os nós folha. Ao chamar o método draw(String color) no objeto Group, todas as formas na lista (Circle e Square) serão desenhadas na cor especificada.
+
+  # Facade pattern
+
+- Padrão Facade no contexto do sistema de ingressos e lanches de um cinema.
+
+![image](https://github.com/jxqlnm/Eng3/assets/128145943/0908e88f-e2a8-48bf-9668-cc379e9e45f6)
+>TicketSystem: Esta classe representa o sistema de reserva de ingressos para filmes. Ela fornece métodos para reservar ingressos, cancelar reservas e recuperar informações dos ingressos.
+
+>SnackSystem: Esta classe representa o sistema de pedidos de lanches. Ela fornece métodos para pedir lanches, cancelar pedidos e recuperar informações dos lanches.
+
+>MovieSystem: Esta classe representa o sistema de exibição de filmes. Ela fornece métodos para iniciar a exibição, parar a exibição e recuperar informações dos filmes.
+
+> CinemaFacade: Esta classe funciona como a fachada para todo o sistema. Ela fornece uma interface simplificada para os clientes interagirem com os sistemas de ingressos, lanches e filmes. O CinemaFacade oculta a complexidade dos subsistemas subjacentes e expõe apenas os métodos essenciais necessários para que os clientes realizem tarefas comuns.
+
+- Aplicando o Padrão Facade:
+Na imagem, a classe CinemaFacade oferece uma interface simplificada para os clientes comprarem ingressos, pedirem lanches e assistirem filmes. Os clientes podem interagir com o sistema usando o método watchMovie(), que recebe como parâmetros o nome do filme, a quantidade de ingressos e uma lista de lanches. A classe CinemaFacade então lida com as interações subjacentes com as classes TicketSystem, SnackSystem e MovieSystem, garantindo que o cliente não precise conhecer o funcionamento interno dos subsistemas.
+
+# Observer Pattern
+- Padrão Observer no contexto de um aplicativo de estação meteorológica.
+  
+![image](https://github.com/jxqlnm/Eng3/assets/128145943/c5f95a51-7b90-4f85-bb85-9ac9da1990c0)
+
+>Estação: Esta classe representa o hardware da estação meteorológica. É responsável por coletar dados do sensor, como temperatura, umidade e pressão.
+
+>Sensor: Esta classe representa um sensor conectado à estação meteorológica. É responsável por medir condições ambientais específicas, como temperatura ou umidade.
+
+>Observador: Esta interface define um contrato para objetos que desejam ser notificados de alterações no modelo.
+
+>Sujeito: Esta interface define um contrato para objetos que podem notificar observadores sobre alterações em seu estado.
+
+>Visão (View): Esta classe representa a interface do usuário do aplicativo da estação meteorológica. É responsável por exibir os dados atuais do sensor e fornecer controles para o usuário interagir com o aplicativo.
+
+>Gráfico: Esta classe representa um gráfico que exibe o histórico de dados do sensor. É um observador da classe Estação e é notificado sempre que os dados do sensor são alterados.
+
+- Aplicando o Padrão Observer:
+
+Na imagem, o Padrão Observer é implementado da seguinte forma:
+Sujeito: A classe Estação implementa a interface Sujeito, pois pode notificar observadores de alterações em seu estado (ou seja, dados do sensor).
+Observadores: As classes Visão e Gráfico implementam a interface Observador, pois desejam ser notificadas de alterações no estado da Estação.
+Notificação: Sempre que os dados do sensor da Estação mudam, ela notifica todos os seus observadores registrados. As classes Visão e Gráfico então atualizam suas exibições com base nos dados atualizados do sensor.
+
+# Singleton Pattern
+- Padrão Singleton no contexto de um aplicativo de estação meteorológica.
+![image](https://github.com/jxqlnm/Eng3/assets/128145943/a385a999-1bfe-451d-8d55-aa129389ad56)
+>Estação: Esta classe representa o hardware da estação meteorológica. É responsável por coletar dados do sensor, como temperatura, umidade e pressão.
+
+>Sensor: Esta classe representa um sensor conectado à estação meteorológica. É responsável por medir condições ambientais específicas, como temperatura ou umidade.
+
+>GerenciadorEstação (StationManager): Esta classe representa a instância singleton da estação meteorológica. Ele fornece métodos para acessar e manipular os dados do sensor.
+
+- Aplicando o Padrão Singleton:
+Na imagem, o Padrão Singleton é implementado da seguinte forma:
+Criação do Singleton: A classe GerenciadorEstação é declarada como um singleton usando uma variável de instância estática. Essa variável é inicializada apenas uma vez, quando a classe é usada pela primeira vez.
+Acessando o Singleton: O método getInstance() fornece uma maneira de acessar a instância singleton da classe GerenciadorEstação. Esse método garante que apenas uma instância da classe seja retornada.
+Usando o Singleton: As classes Visão e Gráfico usam o método getInstance() para obter uma referência à instância singleton da classe GerenciadorEstação. Elas podem então usar esta instância para acessar e manipular os dados do sensor.
+
+# Strategy Pattern
+-  Padrão Strategy (Estratégia) no contexto de um aplicativo de estação meteorológica.
+![image](https://github.com/jxqlnm/Eng3/assets/128145943/ecc17c8c-a915-48c0-9dd5-0c11f5108eab)
+>Estação: Esta classe representa o hardware da estação meteorológica. É responsável por coletar dados do sensor, como temperatura, umidade e pressão.
+
+>Sensor: Esta classe representa um sensor conectado à estação meteorológica. É responsável por medir condições ambientais específicas, como temperatura ou umidade.
+
+>Estratégia: Esta interface define um contrato para objetos que representam diferentes estratégias para processar dados do sensor.
+
+>EstratégiaMédia (AverageStrategy): Esta classe implementa a interface Estratégia e fornece uma estratégia para calcular a média dos dados do sensor.
+
+>EstratégiaMediana (MedianStrategy): Esta classe implementa a interface Estratégia e fornece uma estratégia para calcular a mediana dos dados do sensor.
+
+
+
+- Aplicando o Padrão Strategy:
+Na imagem, o Padrão Strategy é implementado da seguinte forma:
+Interface de Estratégia: A interface Estratégia define os métodos que todas as estratégias devem implementar, como calcular() para processar dados do sensor.
+Estratégias Concretas: As classes EstratégiaMédia e EstratégiaMediana implementam a interface Estratégia e fornecem suas respectivas implementações para calcular a média e a mediana dos dados do sensor.
+Contexto: A classe Estação representa o contexto, pois mantém uma referência à estratégia atual (EstratégiaMédia ou EstratégiaMediana) e a usa para processar os dados do sensor.
+Mudando Estratégias: A classe Estação pode alterar dinamicamente a estratégia que utiliza definindo o atributo estratégia para um novo objeto de estratégia. Isso permite que o aplicativo alterne entre diferentes métodos de processamento em tempo de execução.
+
+# MVC Pattern
+- Padrão Model-View-Controller (MVC) no contexto de um aplicativo de estação meteorológica.
+
+![image](https://github.com/jxqlnm/Eng3/assets/128145943/3e78c17a-645b-4c5a-a4a5-70b389ff25a4)
+
+>Estação: Esta classe representa o hardware da estação meteorológica. É responsável por coletar dados do sensor, como temperatura, umidade e pressão.
+
+>Sensor: Esta classe representa um sensor conectado à estação meteorológica. É responsável por medir condições ambientais específicas, como temperatura ou umidade.
+
+>Observador (Observer): Esta interface define um contrato para objetos que desejam ser notificados de alterações no modelo.
+
+>Sujeito (Subject): Esta interface define um contrato para objetos que podem notificar observadores sobre alterações em seu estado.
+
+>Visão (View): Esta classe representa a interface do usuário do aplicativo da estação meteorológica. É responsável por exibir os dados atuais do sensor e fornecer controles para o usuário interagir com o aplicativo.
+
+- Aplicando o Padrão MVC:
+Na imagem, o padrão MVC é implementado da seguinte forma:
+Modelo (Model): A classe Estação representa o modelo, pois armazena os dados atuais do sensor e fornece métodos para recuperar e atualizar os dados.
+Visão (View): A classe Visão representa a visão, pois exibe os dados atuais do sensor para o usuário e fornece controles para o usuário alterar o sensor exibido.
+Controlador (Controller): O controlador da aplicação é responsável por tratar as interações do usuário, atualizar o modelo com base na entrada do usuário e notificar a visão para atualizar a exibição de acordo.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table>
     <tr>
         <th>Tipos de Padrões</th>
