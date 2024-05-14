@@ -4,7 +4,8 @@
 
 ## Exemplo
 
-![MVC Diagram](/Engenharia%20III/MVC/src/assets/diagrama_mvc.png)
+![image](https://github.com/jxqlnm/Eng3/assets/128145943/1533c684-f7fb-49ec-ac57-bb81a55cde0a)
+
 
 ### Código
 
