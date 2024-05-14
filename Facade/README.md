@@ -4,7 +4,8 @@
 
 ## Exemplo
 
-![Facade Diagram](/Engenharia%20III/Facade/src/assets/diagrama_facade.png)
+![image](https://github.com/jxqlnm/Eng3/assets/128145943/fa10fd0d-06b2-46b4-b828-268ec3b5e448)
+
 
 ### Código
 
