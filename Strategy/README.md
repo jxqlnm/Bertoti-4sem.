@@ -6,7 +6,10 @@
 
 ## Exemplo
 
-![Strategy Diagram](/Engenharia%20III/Strategy/src/assets/diagrama_strategy.png)
+
+
+![image](https://github.com/jxqlnm/Eng3/assets/128145943/28cd0f74-1e38-4444-8fa0-c04e1792678d)
+
 
 ### Código
 
