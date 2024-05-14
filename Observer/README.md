@@ -4,7 +4,8 @@
 
 ## Exemplo
 
-![Observer Diagram](/Engenharia%20III/Observer/src/assets/diagrama_observer.png)
+
+![image](https://github.com/jxqlnm/Eng3/assets/128145943/c27d3eab-1dce-4554-b11e-f2700aa5f738)
 
 ### Código
 
